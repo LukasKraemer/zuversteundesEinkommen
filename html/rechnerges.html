@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/1319.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/jquery_all.js"></script>
+    <script src="../js/rechner.js"></script>
+</head>
+
+<body>
+    <div id="hauptcontainer">
+
+        <!--Titel von übergeordnetem Thema - wird groß dargestellt-->
+        <div id="haupttitel">zu versteuerndes Einkommen</div>
+
+        <div id=content>
+            <div class="untertitel">Ergebnis:</div><br>
+            Das zu versteunde Einkommen beträgt: <span class="text_fett" id="ergebniss_gesamt"></span> €.
+
+            nun können Sie anhand weiterer Daten ihre Steuerlast berechnen z.b. beim Bundesministretium für
+            Finanzen(BMF)
+
+            <a href="https://www.bmf-steuerrechner.de/ekst/eingabeformekst.xhtml" target="_blank">
+                <div class="button">ZU BMF</div>
+            </a>
+
+
+        </div>
+        <!--Button mit Link zu vorherigen Seite-->
+        <div class="button" id="buttonzurueck" onclick="window.history.back();">Zurück</div>
+
+        <!--Button mit Link zu nächster Seite-->
+        <a href="willkommen.html">
+            <div class="button" id="buttonweiter">Weiter</div>
+        </a>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#ergebniss_gesamt").text(Number(sessionStorage.gesamt));
+        });
+    </script>
+</body>

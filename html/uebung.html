@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/1319.css">
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../js/jquery_all.js"></script>
+  <title>Thema</title>
+</head>
+
+<body>
+  <script>
+    function allowDrop(ev) {
+      ev.preventDefault();
+    }
+
+    function drag(ev, id) {
+      ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev, id) {
+      ev.preventDefault();
+      var data = ev.dataTransfer.getData("text");
+
+      if (data == "Element1" && id == "dz1") {
+        $("#Element1").css("background-color", "green");
+      } else if (data == "Element2" && id == "dz1") {
+        $("#Element2").css("background-color", "green");
+      } else if (data == "Element3" && id == "dz1") {
+        $("#Element3").css("background-color", "green");
+      } else if (data == "Element4" && id == "dz2") {
+        $("#Element4").css("background-color", "green");
+      } else if (data == "Element5" && id == "dz2") {
+        $("#Element5").css("background-color", "green");
+      } else if (data == "Element6" && id == "dz2") {
+        $("#Element6").css("background-color", "green");
+      }else if (id == "dz3") {
+        $("#" + data).css("background-color", "grey");
+      } else {
+        $("#" + data).css("background-color", "red");
+      }
+
+      ev.target.appendChild(document.getElementById(data));
+    }
+  </script>
+
+
+  <div id="hauptcontainer">
+
+    <!--Titel von übergeordnetem Thema - wird groß dargestellt-->
+    <div id="haupttitel">zu versteuerndes Einkommen</div>
+
+    <!--innerer Container/div-->
+    <div id="content">
+      <div class="untertitel">Übung</div>
+
+      <div id="drag_drop">
+        <div id="dz1" class="dropzone" ondrop="drop(event, this.id)" ondragover="allowDrop(event)">Einkommen <hr></div>
+        <div id="dz2" class="dropzone" ondrop="drop(event , this.id)" ondragover="allowDrop(event)">Abzüge <hr></div>
+      </div>
+
+      <div id="dz3" class="auswahl" class="drag" ondrop="drop(event, this.id)" ondragover="allowDrop(event)">
+        <div id="Element5" class="drag" draggable="true" ondragstart="drag(event, this.id)">Werbekosten</div>
+        <div id="Element2" class="drag" draggable="true" ondragstart="drag(event, this.id)">Zinserträge</div>
+        <div id="Element3" class="drag" draggable="true" ondragstart="drag(event, this.id)">Mieterträge</div>
+        <div id="Element4" class="drag" draggable="true" ondragstart="drag(event, this.id)">Altersentlastungsbeitrag</div>
+        <div id="Element1" class="drag" draggable="true" ondragstart="drag(event, this.id)">Lohn/Gehalt</div>
+        <div id="Element6" class="drag" draggable="true" ondragstart="drag(event, this.id)">Sonderausgaben</div>
+      </div>
+
+
+
+    </div>
+    <!--Button mit Link zu vorherigen Seite-->
+    <div class="button" id="buttonzurueck" onclick="window.history.back();">Zurück</div>
+
+
+  </div>
+</body>
+
+</html>

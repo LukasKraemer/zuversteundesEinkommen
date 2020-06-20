@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/1319.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/rechner.js"></script>
+    <script src="../js/jquery_all.js"></script>
+</head>
+
+<body>
+    <div id="hauptcontainer">
+
+        <div id="haupttitel">zu versteuerndes Einkommen</div>
+
+        <div id=content>
+            <div class="untertitel">Rechner</div>
+            <form class="form_left">
+
+                <div class="group" id="altersentlastung" onclick="show_erklareung(this.id)">
+                    <input id="input_altersentlastung" class="eingabe" type="number" step="0.01"
+                        name="altersentlastung">
+                    <div id="beschreibung_altersentlastung" class="beschreibung">Altersentlastung:</div>
+                    <span id="erklaerung_altersentlastung1" class="erklaerung"> Betriebseinnahmen abzüglich
+                        Betriebsausgaben</span><br>
+                </div>
+
+                <div class="group" id="entlastungsbetrag_alleinerziehende" onclick="show_erklareung(this.id)">
+                    <input id="input_entlastungsbetrag_alleinerziehende" class="eingabe" type="number" step="0.01" name="entlastungsbetrag_alleinerziehende">
+                    <div id="beschreibung_entlastungsbetrag_alleinerziehende" class="beschreibung">Entlastungsbetrag Alleinerziehende:</div>
+                    <span id="erklaerung_entlastungsbetrag_alleinerziehende1" class="erklaerung"> Betriebseinnahmen
+                        abzüglich Betriebsausgaben</span><br>
+                </div>
+
+                <div class="group" id="freibetrag_verlustabzugwirte" onclick="show_erklareung(this.id)">
+                    <input id="input_freibetrag_verlustabzugwirte" class="eingabe" type="number" step="0.01"
+                        name="freibetrag_verlustabzugwirte">
+                    <div id="beschreibung_freibetrag_verlustabzugwirte" class="beschreibung">Freibetrag
+                        Verlustabzugwirte:</div>
+                    <span id="erklaerung_freibetrag_verlustabzugwirte1" class="erklaerung"> Betriebseinnahmen abzüglich
+                        Betriebsausgaben</span><br>
+                </div>
+
+
+                <div class="group" id="verlustabzug" onclick="show_erklareung(this.id)">
+                    <input id="input_verlustabzug" class="eingabe" type="number" step="0.01" name="verlustabzug">
+                    <div id="beschreibung_verlustabzug" class="beschreibung">Verlustabzug:</div>
+                    <span id="erklaerung_verlustabzug1" class="erklaerung"> Betriebseinnahmen abzüglich
+                        Betriebsausgaben</span><br>
+                </div>
+
+
+                <div class="group" id="sonderausgaben" onclick="show_erklareung(this.id)">
+                    <input id="input_sonderausgaben" class="eingabe" type="number" step="0.01" name="sonderausgaben">
+                    <div id="beschreibung_sonderausgaben" class="beschreibung">sonderausgaben:</div>
+                    <span id="erklaerung_sonderausgaben1" class="erklaerung"> Betriebseinnahmen abzüglich
+                        Betriebsausgaben</span><br>
+                </div>
+
+
+                <div class="group" id="außergewoehnliche_belastungen" onclick="show_erklareung(this.id)">
+                    <input id="input_außergewoehnliche_belastungen" class="eingabe" type="number" step="0.01"
+                        name="außergewoehnliche_belastungen">
+                    <div id="beschreibung_außergewoehnliche_belastungen" class="beschreibung">außergewoehnliche
+                        Belastungen:</div>
+                    <span id="erklaerung_außergewoehnliche_belastungen1" class="erklaerung"> Betriebseinnahmen abzüglich
+                        Betriebsausgaben</span><br>
+                </div>
+
+                Einkünfte: <span id=ergebniss_einkunft></span>€<br>
+                Abzüge: <span id=ergebniss_abzuege></span>€<br>
+                Gesamt: <span id=ergebniss_gesamt></span>€<br>
+
+
+
+                <script>
+                    rechner_abzuege();
+                </Script>
+                <input type="button" value="Eingabe löschen" onclick="reset_abzuege();">
+            </form>
+
+        </div>
+        <!--Button mit Link zu vorherigen Seite-->
+        <div class="button" onclick="window.history.back();" id="buttonzurueck">Zurück</div>
+
+        <!--Button mit Link zu nächster Seite-->
+        <a href="rechnerges.html">
+            <div class="button" id="buttonweiter">Weiter</div>
+        </a>
+    </div>
+</body>
+
+</html>

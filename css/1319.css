@@ -1,0 +1,98 @@
+/*Schriftart für alle Container/div*/
+body {
+    font-family: 'Arial Unicode MS';
+}
+
+/*Hauptcontainer/div*/
+div#hauptcontainer {
+    margin: auto;
+    position: static;
+    width: 900px; 
+    min-height: 200px;
+    height: auto; 
+    border: 1px solid #f8902e; 
+    border-radius: 10px;
+    background-color: #f4f6f6 ;
+}
+
+/*innerer Container/div*/
+#content {
+    padding: 25px 50px 50px 50px;
+    background-color: white;
+    border: 1px solid #f8902e;
+    margin: 25px 50px 50px 50px;
+    border-radius: 20px;
+}
+
+/*Titel von übergeordnetem Thema
+  -> uppercase bedeutet alles groß geschrieben*/
+#haupttitel {
+    text-align: center;
+    font-size: 35px;
+    font-weight: 700;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+/*Titel für untergeordnetes Thema
+  -> uppercase bedeutet alles groß geschrieben*/
+.untertitel {
+    padding-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+/*Frage für Übungen und Wissentests*/
+.frage {
+    text-align: left;
+    font-size: 18px;
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/*Text für Inhalt allgemein*/
+.text {
+    font-size: 18px;
+}
+
+/*Text für wichtigen Inhalt*/
+.text_fett {
+    font-weight: 700;
+    color: rgb(20, 19, 19);
+}
+
+/*Button mit Link zu einer Seite*/
+.button {
+    background-color: #f8902e;
+    font-size: large;
+    border: none;
+    color: black;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+/*Button mit Link zu vorherigen Seite*/
+#buttonzurueck { 
+     margin-left: 312px;
+     margin-bottom: 50px;
+     } 
+/*Button mit Link zu nächster Seite*/
+#buttonweiter {
+    margin-left: 50px; 
+    }
+
+/*Schatten wenn auf Button geklickt wird*/
+.button:active {
+    color:black;
+    box-shadow: 0 0 5px -1px rgba(0,0,0,0.7);
+}
+
+/*Farbänderung wenn Cursor über Button ist*/
+.button:hover {
+    background-color: #ff6a00;
+}

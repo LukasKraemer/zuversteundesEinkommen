@@ -1,0 +1,61 @@
+.beschreibung{
+    display: inline-block;
+}
+
+.erklaerung{
+    display: block;
+    color: darkgreen;
+}
+
+.dropzone{
+    display: inline-block;
+    position: absolute;
+    height: 120px;
+    width: 300px;
+    border: 3px solid black;
+}
+
+#dz1{
+    top: 10px;
+    left: 10px;
+}
+#dz2{
+    top: 10px;
+    right: 10px;
+}
+
+#dz3{
+    margin-top: 150px;
+    top:100px;
+}
+
+.dropzone .drag{
+    margin-left: 30px;
+}
+
+.auswahl{
+    width: 670px;
+    height: auto;
+    min-height: 50px;
+    border: 3px solid black;
+    margin-left: 10px;
+}
+.group{
+    width: 100%;
+}
+
+#drag_drop{
+    width: 100%;
+    position: relative;
+}
+.drag{
+    width: 222px;
+    background-color: grey;
+    border:1px solid black;
+    text-align: center;
+}
+
+
+.willkommen{
+    margin-left: 50px;
+}

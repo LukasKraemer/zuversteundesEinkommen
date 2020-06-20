@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/1319.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../js/jquery_all.js"></script>
+    <script src="../js/rechner.js"></script>
+</head>
+
+<body>
+    <div id="hauptcontainer">
+
+        <!--Titel von übergeordnetem Thema - wird groß dargestellt-->
+        <div id="haupttitel">zu versteuerndes Einkommen</div>
+
+        <div id=content>
+            <div class="untertitel">Rechner</div>
+
+            <!--Überschift-->
+            <P id="frage">zu versteuerndes Einkommen berechen</P><br>
+            bei Klick gibt es mehr informationen
+
+            <!--Formular in dem alle einküfte eingetragen werden sollen-->
+            <form class="form_left">
+
+                <div class="group" id="forst" onclick="show_erklareung(this.id)">
+                    <input id="input_forst" class="eingabe" type="number" step="0.01" name="forst">
+                    <div id="beschreibung_forst" class="beschreibung">Einkünfte aus Land- und Forstwirtschaft:</div>
+                    <span id="erklaerung_forst" class="erklaerung"> Betriebseinnahmen abzüglich
+                        Betriebsausgaben</span><br>
+                </div>
+
+                <div class="group" id=gewerbe onclick="show_erklareung(this.id)">
+                    <input id="input_gewerbe" class="eingabe" type="number" step=0.01 name="gewerbe">
+                    <div id="beschreibung_gewerbe" class="beschreibung">Einkünfte aus Gewerbebetrieb:</div>
+                    <span id="erklaerung_gewerbe" class="erklaerung"> Betriebseinnahmen abzüglich
+                        Betriebsausgaben.</span><br>
+
+                </div>
+
+                <div class="group" id="nichtselbstaendiger" onclick="show_erklareung(this.id)">
+                    <input id="input_nichtselbstaendiger" class="eingabe" type="number" step=0.01 name="nichtselbstaendiger">
+                    <div id="beschreibung_nichtselbstaendiger" class="beschreibung"> Einkünfte aus nichtselbständiger Arbeit:</div>
+                    <span id="erklaerung_nichtselbstaendiger" class="erklaerung">Einnahmen abzüglich Werbungskosten,
+                        mindestens Arbeitnehmer-Pauschbetrag; bei Versorgungsbezügen wird zusätzlich der
+                        Versorgungsfreibetrag und der
+                        Zuschlag zum Versorgungsfreibetrag abgezogen.</span><br>
+                </div>
+
+                <div class="group" id="kapitalvermoegen" onclick="show_erklareung(this.id)">
+                    <input id="input_kapitalvermoegen" class="eingabe" type="number" step=0.01 name="kapitalvermoegen">
+                    <div id="beschreibung_kapitalvermoegen" class="beschreibung">Einkünfte aus Kapitalvermögen:</div>
+                    <span id="erklaerung_kapitalvermoegen" class="erklaerung">Einnahmen abzüglich Werbungskosten,
+                        mindestens Werbungskosten-Pauschbetrag, und abzüglich Sparerfreibetrag, ggf. Abzug ausländischer
+                        Quellensteuer.
+                        Dies gilt nur, falls die Kapitalerträge in die Veranlagung einbezogen werden.</span><br>
+                </div>
+
+                <div class="group" id="selbststaendiger" onclick="show_erklareung(this.id)">
+                    <input id="input_selbststaendiger" class="eingabe" type="number" step=0.01 name="kapitalvermoegen">
+                    <div id="beschreibung_selbststaendiger" class="beschreibung">Einkünfte aus selbststaendiger Arbeit:
+                    </div>
+                    <span id="erklaerung_selbststaendiger" class="erklaerung">Einnahmen abzüglich Werbungskosten,
+                        mindestens Werbungskosten-Pauschbetrag, und abzüglich Sparerfreibetrag, ggf. Abzug ausländischer
+                        Quellensteuer.
+                        Dies gilt nur, falls die Kapitalerträge in die Veranlagung einbezogen werden.</span><br>
+                </div>
+
+
+                <div class="group" id="miete" onclick="show_erklareung(this.id)">
+                    <input id="input_miete" class="eingabe" type="number" step=0.01 name="miete">
+                    <div id="beschreibung_miute" class="beschreibung">Einkünfte aus Vermietung und Verpachtung:</div>
+                    <span id="erklaerung_miete" class="erklaerung">Einnahmen abzüglich Werbungskosten.</span><br>
+                </div>
+
+                <div class="group" id="sonsitges" onclick="show_erklareung(this.id)">
+                    <input id="input_sonstiges" class="eingabe" type="number" step=0.01 name="sonstiges">
+                    <div id="beschreibung_sonsitges" class="beschreibung"> Sonstige Einkünfte:</div>
+                    <span id="erklaerung_sonsitges" class="erklaerung">Einnahmen abzüglich Werbungskosten, mindestens
+                        Werbungskosten-Pauschbetrag. </span><br>
+                </div>
+
+                
+
+                Einkünfte: <span id=ergebniss_einkunft></span>€<br>
+                Abzüge: <span id=ergebniss_abzuege></span>€<br>
+                Gesamt: <span id=ergebniss_gesamt></span>€<br>
+
+                <input type="button" value="Eingabe löschen" onclick="reset_einkunft();">
+            </form>
+
+        </div>
+        <!--Button mit Link zu vorherigen Seite-->
+        <div class="button" id="buttonzurueck" onclick="window.history.back();">Zurück</div>
+
+        <!--Button mit Link zu nächster Seite-->
+        <a href="rechnera.html">
+            <div class="button" id="buttonweiter">Weiter</div>
+        </a>
+
+
+
+
+        <script>
+            rechner_einkommen()
+        </script>
+
+    </div>
+</body>
+
+</html>

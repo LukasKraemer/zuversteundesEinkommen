@@ -37,7 +37,7 @@ function vorbelegung(rechnerseite="none"){
 //Funktioen für die Seite Seite des Rechner
 function rechner_einkommen(){
     
-    if (sessionStorage.einkunft != 'undefined') {
+    if (sessionStorage.einkunft == 'undefined') {
         vorbelegung("einkunft");
       }
     else{
